@@ -46,11 +46,13 @@ function compute(){
     global $handle;
     mysqli_data_seek($result, 0);
     while($row = $result->fetch_assoc()) {
-       
+       if($row["eqcost"]< $budget && ($row["length"]*$row["breadth"])<$area){
         $op="name: " . $row["eqbrandname"]. " - cat: " . $row["eqcategory"]. " " . $row["eqcost"]. "\n";
+           fwrite($handle,$op);
+       }
         $budget=$budget-$row["eqcost"];
         $area=$area-($row["length"]*$row["breadth"]);
-         fwrite($handle,$op);
+         
      
 
 }
