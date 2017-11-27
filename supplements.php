@@ -130,24 +130,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   	    <div class="category">
 			   	    	<h3 class="menu_head">Category Options</h3>
 			   	    	<ul class="category_nav">
-					   	  	<li><a href="#">Men</a></li>
-					   	  	<li><a href="#">Women</a></li>
-					   	  	<li><a href="#">Kids</a></li>
-					   	  	<li><a href="#">Wetsuits</a></li>
-					   	  	<li><a href="#">Outerwear</a></li>
+									<?php
+
+
+									include "db.php";
+
+
+										$sql = "select * from nutrition_supplements_categories";
+										$run_query = mysqli_query($con,$sql);
+										$count = mysqli_num_rows($run_query);
+										if($count > 0){
+												while ($row = mysqli_fetch_array($run_query)) {
+														$nucat = $row['supcategory'];
+														echo "<li><a href='nutritioncat.php?category=$nucat'>$nucat</a></li>";
+
+
+												}
+										}
+
+
+									?>
 					   	</ul>
 			   	    </div>
 			   	    <div class="category">
 			   	    	<h3 class="menu_head">Brand Options</h3>
 			   	    	<ul class="category_nav">
-					   	  	<li><a href="#">Billabong</a></li>
-					   	  	<li><a href="#">Element</a></li>
-					   	  	<li><a href="#">o'neill</a></li>
-					   	  	<li><a href="#">Oakley</a></li>
-					   	  	<li><a href="#">Reef</a></li>
-					   	  	<li><a href="#">Quiksilver</a></li>
-					   	  	<li><a href="#">Ripcurl</a></li>
-					   	  	<li><a href="#">Jackss</a></li>
+							<?php
+
+
+									include "db.php";
+
+
+										$sql = "select * from nutrition_supplements_brands";
+										$run_query = mysqli_query($con,$sql);
+										$count = mysqli_num_rows($run_query);
+										if($count > 0){
+												while ($row = mysqli_fetch_array($run_query)) {
+														$supbrand = $row['supbrandname'];
+														echo "<li><a href='equipmentsbrands.php?brand=$supbrand'>$supbrand</a></li>";
+
+
+												}
+										}
+
+
+									?>
 					   	</ul>
 			   	    </div>
 			   	    <div class="tags">
@@ -242,7 +269,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        	   </div>
 					<div class="clearfix"></div>
 					<ul>
-					  <li class="simpleCart_shelfItem">
+					  <!--<li class="simpleCart_shelfItem">
 							<a class="cbp-vm-image" href="single.php">
 							<div class="inner_content clearfix">
 								<div class="product_image">
@@ -261,168 +288,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							 <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pic11.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
-									   </div>
-									   <div class="price">$99.00</div>
-									   <div class="clearfix"></div>
-								     </div>
-								  </div>
-			                     </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pic10.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
-									   </div>
-									   <div class="price">$99.00</div>
-									   <div class="clearfix"></div>
-								     </div>
-								  </div>
-			                     </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							   <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pic9.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
-									   </div>
-									   <div class="price">$99.00</div>
-									   <div class="clearfix"></div>
-								     </div>
-								  </div>
-			                   </div>
-							</a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pic8.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
-									   </div>
-									   <div class="price">$99.00</div>
-									   <div class="clearfix"></div>
-								     </div>
-								  </div>
-			                     </div>
-							</a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-								<div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pic7.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
-									   </div>
-									   <div class="price">$99.00</div>
-									   <div class="clearfix"></div>
-								     </div>
-								  </div>
-			                     </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-								<div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pic6.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
-									   </div>
-									   <div class="price">$99.00</div>
-									   <div class="clearfix"></div>
-								     </div>
-								  </div>
-			                     </div>
-							</a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-								<div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pic5.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
-									   </div>
-									   <div class="price">$99.00</div>
-									   <div class="clearfix"></div>
-								     </div>
-								  </div>
-			                    </div>
-							</a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-							<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-								<div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pic4.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Lorem Ipsum 2015</p>
-									   </div>
-									   <div class="price">$99.00</div>
-									   <div class="clearfix"></div>
-								     </div>
-								  </div>
-			                    </div>
-							</a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-					</ul>
+						</li> -->
+						<?php
+
+
+						include "db.php";
+
+
+							$sql = "select n.supname as name, nc.supcategory as category, nb.supbrandname as brand, n.supcost as cost from nutrition_supplements n, nutrition_supplements_categories nc, nutrition_supplements_brands nb where n.supcatid=nc.supcatid and n.supbrand=nb.supbrandname";
+							$run_query = mysqli_query($con,$sql);
+							$count = mysqli_num_rows($run_query);
+							if($count > 0){
+									while ($row = mysqli_fetch_array($run_query)) {
+											extract($row);
+											$name=strtolower($name);
+											$category=strtolower($category);
+											$brand=strtolower($brand);
+											echo "<li class='simpleCart_shelfItem'>
+												<a class='cbp-vm-image' href='equipmentsprod.php?name=$name&brand=$brand&category=$category&cost=$cost'>
+												<div class='inner_content clearfix'>
+													<div class='product_image'>
+														<img src='images/nutrition/$category/$brand/$name/1.jpg'  style='width:210px;height:250px;' class='img-responsive' alt=''/>
+														<div class='product_container'>
+														   <div class='cart-left'>
+															 <p class='title'>$name</p>
+															 <p class='title' style='font-size: small;'>$brand</p>
+
+														   </div>
+														   <div class='mount item_price price'>₹$cost</div>
+														   <div class='clearfix'></div>
+													     </div>
+													  </div>
+								                     </div>
+							                    </a>
+												<div class='cbp-vm-details'>
+													Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
+												</div>
+												<a class='button item_add cbp-vm-icon cbp-vm-add' href='#'>Add to cart</a>
+											</li>";
+
+
+									}
+							}
+
+
+						?>					
+						</ul>
 				</div>
 				<script src="js/cbpViewModeSwitch.js" type="text/javascript"></script>
                 <script src="js/classie.js" type="text/javascript"></script>

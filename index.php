@@ -1,17 +1,22 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Fitness Store</title>
+<title>Shape an E-Commerce online Shopping Category Flat Bootstarp responsive Website Template| Home :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Shape Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+<meta name="keywords" content="Shape Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/simpleCart.min.js"> </script>
 <script src="js/jquery.min.js"></script>
-<script src="main.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
@@ -19,6 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
 <script src="js/jquery.easydropdown.js"></script>
+<script src="main.js"></script>
 <!-- Add fancyBox main JS and CSS files -->
 <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 <link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
@@ -35,22 +41,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					removalDelay: 300,
 					mainClass: 'my-mfp-zoom-in'
 			});
-
-			if(sessionStorage["uname"]!=undefined){
-				$("#username").html("<b>"+sessionStorage["uname"]+"</b>");
-			}
-
-
-
 		});
 		</script>
 </head>
 <body>
-<div class="header">
-      <div class="container">
+<div class="header">	
+      <div class="container"> 
          <div class="header-top">
       		 <div class="logo">
-				<a href="index.php"><img src="" alt="Bharat Finess Store"/></a>
+				<a href="index.html"><img src="images/logo.png" alt=""/></a>
 			 </div>
 		   <div class="header_right">
 			 <ul class="social">
@@ -70,23 +69,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    			</div>
 			<div class="clearfix"></div>
           </div>
-
-					<div id="username" class="header_left">
-		<b>HI</b>
-		<div class="clearfix"></div>
-					</div>
           <div class="clearfix"></div>
-		 </div>
+		 </div>  
 		 <div class="banner_wrap">
 			<div class="bannertop_box">
    		 		<ul class="login">
-   		 			<li class="login_text"><a href="login.php">Login</a></li>
-   		 			<li class="wish"><a href="checkout.php">Wish List</a></li>
+   		 			<li class="login_text"><a href="login.html">Login</a></li>
+   		 			<li class="wish"><a href="checkout.html">Wish List</a></li>
    		 			<div class='clearfix'></div>
    		 		</ul>
    		 		<div class="cart_bg">
 	   		 	  <ul class="cart">
-	   		 		 <a href="checkout.php">
+	   		 		 <a href="checkout.html">
 					    <h4><i class="cart_icon"> </i><p>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</p><div class="clearfix"> </div></h4>
 					 </a>
 				     <h5 class="empty"><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></h5>
@@ -94,17 +88,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   </ul>
 	   		 	</div>
 			  	<ul class="quick_access">
-   		 			<li class="view_cart"><a href="checkout.php">View Cart</a></li>
-   		 			<li class="check"><a href="checkout.php">Checkout</a></li>
+   		 			<li class="view_cart"><a href="checkout.html">View Cart</a></li>
+   		 			<li class="check"><a href="checkout.html">Checkout</a></li>
    		 			<div class='clearfix'></div>
    		 		</ul>
    		 		<div class="search">
-	  			   <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-				   <input type="submit" value="">
+	  			   <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" id = "search">
+				   <button id="search_btn">Search</button>
 	  			</div>
 	  			<div class="welcome_box">
 	  				<h2>Welcome to Bharat Fitness Store</h2>
-	  				<p>Don’t be a brat, burn that fat.</p>
+	  				<p>Don't be a brat, burn that fat</p>
 	  			</div>
    		 	</div>
    		 	<div class="banner_right">
@@ -123,12 +117,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-3">
 					<div class="menu_box">
 				   	  	<h3 class="menu_head">Menu</h3>
-								<ul class="nav">
-								 <li><a href="apparel.php">About</a></li>
-								 <li><a href="equipments.php">Equipments</a></li>
-								 <li><a href="supplements.php">Nutrition Supplements</a></li>
-								 <li><a href="contact.php">Contact</a></li>
-							</ul>
+				   	     <ul class="nav">
+					   	  	<li><a href="apparel.php">About</a></li>
+					   	  	<li><a href="equipments.php">Equipments</a></li>
+					   	  	<li><a href="supplements.php">Nutrition Supplements</a></li>
+					   	  	<li><a href="contact.php">Contact</a></li>
+					   	 </ul>
 			   	    </div>
 			   	    <div class="side_banner">
 					   <div class="banner_img"><img src="images/pic9.jpg" class="img-responsive" alt=""/></div>
@@ -177,127 +171,218 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 <a href="#" class="link1">View all</a>
 				      </div>
 				</div>
-			   <div class="col-md-9">
-				<h3 class="m_1">New Products</h3>
-				<div id = "get_product"></div>
-			<div class="clearfix"></div>
-			    </div>
-
-		<h3 class="m_2">Top Products</h3>
-			   <div class="content_grid">
-			   		<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	   <a href="single.php">
+			   <div class="col-md-9" id = "products">
+				<h3 class='m_1'>Products</h3>
+				 <!--<div class="content_grid">
+				   <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	   <a href="single.html">
 						   <div class="inner_content clearfix">
 							<div class="product_image">
-								<img src="images/pic7.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-							    <div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">Lorem Ipsum 2015</p>
-								   </div>
-								   <span class="amount item_price">$45.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	     <a href="single.php">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="images/pic8.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
-							    <div class="product_container">
-								   <div class="cart-left">
-									 <p class="title">Lorem Ipsum 2015</p>
-								   </div>
-								   <span class="amount item_price">$45.00</span>
-								   <div class="clearfix"></div>
-							     </div>
-							  </div>
-		                    </div>
-		                 </a>
-				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1">
-				  	  <a href="single.php">
-						   <div class="inner_content clearfix">
-							<div class="product_image">
-								<img src="images/pic13.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
+								<img src="images/pic1.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>	
 								 <div class="product_container">
 								   <div class="cart-left">
 									 <p class="title">Lorem Ipsum 2015</p>
 								   </div>
 								   <span class="amount item_price">$45.00</span>
 								   <div class="clearfix"></div>
-							     </div>
+							     </div>		
+							  </div>
+		                    </div>
+		                 </a>
+				    </div> !-->
+				   
+					<?php
+						include "db.php";
+						$sql = "select e.eqname as name, ec.eqcategory as category, eb.eqbrandname as brand, e.eqcost as cost from equipments e, equipments_categories ec, equipments_brands eb where e.eqcatid=ec.eqcatid and e.eqbrandid=eb.eqbrandid";
+						$run_query = mysqli_query($con,$sql);
+						$count = mysqli_num_rows($run_query);
+						$i = 0;
+						if($count > 0)
+						{
+							while (($row = mysqli_fetch_array($run_query)) && ($i <= 2))
+							{
+								extract($row);
+								$name=strtolower($name);
+								$category=strtolower($category);
+								$brand=strtolower($brand);
+								echo "<div class='content_grid'>
+										<div class='col_1_of_3 span_1_of_3 simpleCart_shelfItem'>
+											<a href='images/equipments/$category/$name/$brand/description.txt'>
+												<div class='inner_content clearfix'>
+												 <div class='product_image'>
+													<img src='images/equipments/$category/$name/$brand/1.jpg' class='img-responsive' alt=''/>
+													<a href='' class='button item_add item_1'> </a>	
+													<div class='product_container'>
+														<div class='cart-left'>
+														<p class='title'>$brand $name</p>
+														</div>
+														<span class='amount item_price'>$cost</span>
+														<div class='clearfix'></div>
+													</div>		
+												</div>
+											</div>
+											</a>
+										</div>";
+								$i++;
+							}
+						}
+					?>
+				  <div class="clearfix"></div>
+				  	<?php
+						include "db.php";
+						$sql = "select n.supname as name, nc.supcategory as category, nb.supbrandname as brand, n.supcost as cost from nutrition_supplements n, nutrition_supplements_categories nc, nutrition_supplements_brands nb where n.supcatid=nc.supcatid and n.supbrand=nb.supbrandname";
+						$run_query = mysqli_query($con,$sql);
+		
+						$count = mysqli_num_rows($run_query);
+						$i = 0;
+						if($count > 0)
+						{
+							while (($row = mysqli_fetch_array($run_query)) && ($i <= 2))
+							{
+								extract($row);
+								$name=strtolower($name);
+								$category=strtolower($category);
+								$brand=strtolower($brand);
+		
+								echo "<div class='content_grid'>
+										<div class='col_1_of_3 span_1_of_3 simpleCart_shelfItem'>
+											<a href='images/nutrition/$category/$brand/$name/description.txt'>
+												<div class='inner_content clearfix'>
+												 <div class='product_image'>
+													<img src='images/nutrition/$category/$brand/$name/1.jpg' class='img-responsive' alt=''/>
+													<a href='' class='button item_add item_1'> </a>	
+													<div class='product_container'>
+														<div class='cart-left'>
+														<p class='title'>$name</p>
+														</div>
+														<span class='amount item_price'>$cost</span>
+														<div class='clearfix'></div>
+													</div>		
+												</div>
+											</div>
+											</a>
+										</div>";
+								$i++;
+							}
+						}
+					?>
+
+			   </div>
+			   <!--<h3 class="m_2">Top Products</h3>
+			   <div class="content_grid">
+			   		<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	   <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image">
+								<img src="images/pic7.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>		
+							    <div class="product_container">
+								   <div class="cart-left">
+									 <p class="title">Lorem Ipsum 2015</p>
+								   </div>
+								   <span class="amount item_price">$45.00</span>
+								   <div class="clearfix"></div>
+							     </div>		
+							  </div>
+		                    </div>
+		                 </a>
+				    </div>
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	     <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image">
+								<img src="images/pic8.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>		
+							    <div class="product_container">
+								   <div class="cart-left">
+									 <p class="title">Lorem Ipsum 2015</p>
+								   </div>
+								   <span class="amount item_price">$45.00</span>
+								   <div class="clearfix"></div>
+							     </div>		
+							  </div>
+		                    </div>
+		                 </a>
+				    </div>
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1"> 
+				  	  <a href="single.html">
+						   <div class="inner_content clearfix">
+							<div class="product_image">
+								<img src="images/pic13.jpg" class="img-responsive" alt=""/>
+								<a href="" class="button item_add item_1"> </a>	
+								 <div class="product_container">
+								   <div class="cart-left">
+									 <p class="title">Lorem Ipsum 2015</p>
+								   </div>
+								   <span class="amount item_price">$45.00</span>
+								   <div class="clearfix"></div>
+							     </div>		
 							  </div>
 		                    </div>
 		                 </a>
 				    </div>
 				    <div class="clearfix"></div>
-			    </div>
-			    <h3 class="m_2">Sale Products</h3>
+			    </div> !-->
+			    <!--<h3 class="m_2">Sale Products</h3>
 			   <div class="content_grid">
-			   		<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	   <a href="single.php">
+			   		<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	   <a href="single.html">
 						   <div class="inner_content clearfix">
 							<div class="product_image">
 								<img src="images/pic10.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
+								<a href="" class="button item_add item_1"> </a>		
 								<div class="product_container">
 								   <div class="cart-left">
 									 <p class="title">Lorem Ipsum 2015</p>
 								   </div>
 								   <span class="amount item_price">$45.00</span>
 								   <div class="clearfix"></div>
-							     </div>
+							     </div>		
 							  </div>
 		                    </div>
 		                 </a>
 				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-				  	   <a href="single.php">
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
+				  	   <a href="single.html">
 						   <div class="inner_content clearfix">
 							<div class="product_image">
 								<img src="images/pic11.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
+								<a href="" class="button item_add item_1"> </a>	
 								<div class="product_container">
 								   <div class="cart-left">
 									 <p class="title">Lorem Ipsum 2015</p>
 								   </div>
 								   <span class="amount item_price">$45.00</span>
 								   <div class="clearfix"></div>
-							     </div>
+							     </div>		
 							  </div>
 		                    </div>
 		                 </a>
 				    </div>
-				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1">
-				  	    <a href="single.php">
+				    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1"> 
+				  	    <a href="single.html">
 						   <div class="inner_content clearfix">
 							<div class="product_image">
 								<img src="images/pic12.jpg" class="img-responsive" alt=""/>
-								<a href="" class="button item_add item_1"> </a>
+								<a href="" class="button item_add item_1"> </a>	
 								<div class="product_container">
 								   <div class="cart-left">
 									 <p class="title">Lorem Ipsum 2015</p>
 								   </div>
 								   <span class="amount item_price">$45.00</span>
 								   <div class="clearfix"></div>
-							     </div>
+							     </div>		
 							  </div>
 		                    </div>
 		                 </a>
-				   </div>
+				   </div> -->
 				   <div class="clearfix"></div>
 			    </div>
 			  </div>
 			</div>
 		 </div>
-		</div>
-		</div>
+		</div> 
 		<div class="container">
 		  <div class="brands">
 			 <ul class="brand_icons">
@@ -378,12 +463,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  <li><a href="#">Addresses</a></li>
 				    </ul>
 				  </div>
-
+				  <div class="footer-grid">
+					<h3>Newsletter</h3>
+					<p class="footer_desc">Nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
+					<div class="search_footer">
+			          <input type="text" class="text" value="Insert Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Insert Email';}">
+			          <input type="submit" value="Submit">
+			        </div>
+			        <img src="images/payment.png" class="img-responsive" alt=""/>
+				 </div>
 				 <div class="footer-grid footer-grid_last">
 					<h3>About Us</h3>
 					<p class="footer_desc">Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,.</p>
                     <p class="f_text">Phone:  &nbsp;&nbsp;&nbsp;00-250-2131</p>
-                    <p class="email">Email: &nbsp;&nbsp;&nbsp;<a href="#">info(at)Shape.com</a></p>
+                    <p class="email">Email: &nbsp;&nbsp;&nbsp;<a href="#">info(at)Shape.com</a></p>	
                  </div>
 				 <div class="clearfix"> </div>
 			</div>
@@ -391,9 +484,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="footer_bottom">
         	<div class="container">
         		<div class="copy">
-				   <p>Copyright &copy; 2017 Bharat Fitness Store. All Rights Reserved . Design by Team 7 </p>
+				   <p>Copyright &copy; 2015 Shape. All Rights Reserved . Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 			    </div>
         	</div>
         </div>
 </body>
-</html>
+</html>		
