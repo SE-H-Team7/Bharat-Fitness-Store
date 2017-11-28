@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Supplement Details</title>
+<title>Equipment Details</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Shape Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -104,14 +104,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    </ul>
 		    <div class="cart_bg">
 	   		 	  <ul class="cart">
-	   		 		 <a href="checkout.php">
+	   		 			<a href="checkout.php">
 					    <h4><i class="cart_icon"> </i><p>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</p><div class="clearfix"> </div></h4>
 					 </a>
 				     <h5 class="empty"><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></h5>
 				     <div class="clearfix"> </div>
                   </ul>
 	   		 	</div>
-			 <ul class="quick_access">
+			  <ul class="quick_access">
 				<li class="view_cart"><a href="checkout.php">View Cart</a></li>
 				<li class="check"><a href="checkout.php">Checkout</a></li>
 				<div class='clearfix'></div>
@@ -123,6 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  </div>
 		</div>
     </div>
+
 	<div class="main">
 	  <div class="content_box">
 		<div class="container">
@@ -132,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				   	  	<h3 class="menu_head">Menu</h3>
 								<ul class="nav">
 								 <li><a href="apparel.php">About</a></li>
-								 <li><a href="apparel.php">Equipments</a></li>
+								 <li><a href="equipments.php">Equipments</a></li>
 								 <li><a href="apparel.php">Nutrition Supplements</a></li>
 								 <li><a href="contact.php">Contact</a></li>
 							</ul>
@@ -198,15 +199,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        Apparel&nbsp;
+                        <?php
+
+include 'db.php' ;
+extract($_GET) ;
+echo $category; ?>&nbsp;
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="home">&nbsp;
-                       Women / Men
+                       <?php
+
+include 'db.php' ;
+extract($_GET) ;
+echo $brand; ?>
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="women">
-                       Lorem Ipsum
+                       <?php
+
+include 'db.php' ;
+extract($_GET) ;
+echo $name; ?>
                     </li>
                 </ul>
                 <ul class="previous">
@@ -214,121 +227,192 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
-			   <div class="singel_right">
-			     <div class="labout span_1_of_a1">
-				   <div class="flexslider">
-					 <ul class="slides">
-						<li data-thumb="images/s1.jpg">
-							<img src="images/s1.jpg" />
-						</li>
-						<li data-thumb="images/s2.jpg">
-							<img src="images/s2.jpg" />
-						</li>
-						<li data-thumb="images/s3.jpg">
-							<img src="images/s3.jpg" />
-						</li>
-						<li data-thumb="images/s4.jpg">
-							<img src="images/s4.jpg" />
-						</li>
+
+
+
+<!-- ----------------------------------------------------------------------------------------------------  -->
+
+
+
+
+
+<?php
+
+include 'db.php' ;
+extract($_GET) ;
+$proddetails = "'".$name.",".$category.",".$brand.",".$cost."'";
+$f = fopen("images/nutrition/$category/$brand/des.txt", "r");
+$txt=fgets($f);
+
+					echo "
+					<div class='singel_right'>
+										<div class='labout span_1_of_a1'>
+										<div class='flexslider'>
+										<ul class='slides'>
+										 <li data-thumb='images/nutrition/$category/$brand/pic1.jpg'>
+											 <img src='images/nutrition/$category/$brand/pic1.jpg'/>
+										 </li>
+										 <li data-thumb='images/nutrition/$category/$brand/pic2.jpg'>
+											 <img src='images/nutrition/$category/$brand/pic2.jpg'/>
+										 </li>
+										 <li data-thumb='images/nutrition/$category/$brand/pic3.jpg'>
+											 <img src='images/nutrition/$category/$brand/pic3.jpg'/>
+										 </li>
+
+										</ul>
+									 </div>
+									</div>
+					<div class='cont1 span_2_of_a1 simpleCart_shelfItem'>
+					<h1>$name</h1>
+
+					 <div class='price_single'>
+					 <span class='amount item_price actual'>₹$cost</span>
+					</div>
+					<h2 class='quick'>Quick Overview:</h2>
+					
+					<p class='quick_desc'>$txt</p>
+					 <ul class='size'>
+					 <h3>Weight</h3>
+					 <li><a href='#'>1 lbs</a></li>
+					 <li><a href='#'>2 lbs</a></li>
+					 <li><a href='#'>3 lbs</a></li>
+					 <li><a href='#'>4 lbs</a></li>
+					 <li><a href='#'>5 lbs</a></li>
+					 <li><a href='#'>10 lbs</a></li>
+					</ul>
+					<ul class='product-qty'>
+						<span>Quantity:</span>
+						<select id='quant'>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						</select>
 					 </ul>
-				  </div>
-			  </div>
-			  <div class="cont1 span_2_of_a1 simpleCart_shelfItem">
-				<h1>Lorem Ipsum</h1>
-				<ul class="rating">
-				   <li><a class="product-rate" href="#"> <label> </label></a> <span> </span></li>
-				   <li><a href="#">1 Review(s) Add Review</a></li>
-				   <div class="clearfix"></div>
-			    </ul>
-			    <div class="price_single">
-				  <span class="reducedfrom">$140.00</span>
-				  <span class="amount item_price actual">$120.00</span><a href="#">click for offer</a>
-				</div>
-				<h2 class="quick">Quick Overview:</h2>
-				<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
-			    <ul class="size">
-					<h3>Size</h3>
-					<li><a href="#">25</a></li>
-					<li><a href="#">26</a></li>
-					<li><a href="#">27</a></li>
-					<li><a href="#">28</a></li>
-					<li><a href="#">29</a></li>
-					<li><a href="#">30</a></li>
-					<li><a href="#">31</a></li>
-					<li><a href="#">32</a></li>
-					<li><a href="#">33</a></li>
-				</ul>
-				<ul class="size">
-					<h3>Length</h3>
-					<li><a href="#">32</a></li>
-					<li><a href="#">34</a></li>
-				</ul>
-				<ul class="product-qty">
-				   <span>Quantity:</span>
-				   <select>
-					 <option>1</option>
-					 <option>2</option>
-					 <option>3</option>
-					 <option>4</option>
-					 <option>5</option>
-					 <option>6</option>
-				   </select>
-			    </ul>
-			    <div class="btn_form button item_add item_1">
-				   <form>
-					 <input type="submit" value="Add to Cart" title="">
-				  </form>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		   </div>
+					 <div class='btn_form button item_add item_1'>
+
+						<input type='button' onclick=\"addtocart(event,$proddetails)\" value='Add to Cart' title=''>
+
+					</div>
+					</div>
+					<div class='clearfix'></div>
+					</div>";
+
+fclose($f);
+
+
+?>
+
+
+
+
+
+
+
+
+
+<!--  ----------------------------------------------------------------------------------------------------  -->
 		   <div class="sap_tabs">
 				     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 						  <ul class="resp-tabs-list">
 						  	  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Product Description</span></li>
-							  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Additional Information</span></li>
-							  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Reviews</span></li>
 							  <div class="clear"></div>
 						  </ul>
 							<div class="resp-tabs-container">
 							    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
 									<div class="facts">
 									  <ul class="tab_list">
-									  	<li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</a></li>
-									  	<li><a href="#">augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigatione</a></li>
-									  	<li><a href="#">claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica</a></li>
-									  	<li><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>
+<?php
+
+include 'db.php' ;
+extract($_GET) ;
+
+	$f = fopen("images/nutrition/$category/$brand/des.txt", "r");
+
+	while(!feof($f)) { 
+	    echo fgets($f) . "<br />";
+	} 
+
+	fclose($f);
+
+	?>									 
+									 <!--	<li><a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</a></li>
+									  	<li><a>augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigatione</a></li>
+									  	<li><a>claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica</a></li>
+									  	<li><a>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>  -->
+										
 									  </ul>
 							        </div>
 							     </div>
-							      <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-									<div class="facts">
-									  <ul class="tab_list">
-									    <li><a href="#">augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigatione</a></li>
-									  	<li><a href="#">claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica</a></li>
-									  	<li><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>
-									  </ul>
-							        </div>
-							     </div>
-							      <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-									<ul class="tab_list">
-									  	<li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</a></li>
-									  	<li><a href="#">augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigatione</a></li>
-									  	<li><a href="#">claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores leg</a></li>
-									  	<li><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>
-									  </ul>
-							     </div>
+
+
 							 </div>
 					      </div>
 					 </div>
 					 <h3 class="like">You Might Also Like</h3>
 				     <ul id="flexiselDemo3">
-						<li><img src="images/pic11.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Syenergy 2mm</a><p>Rs 850</p></div></li>
+					 
+					<?php
+
+
+						include "db.php";
+
+
+							$sql = "select n.supname as name, nc.supcategory as category, n.supbrand as brand, n.supcost as cost from nutrition_supplements n, nutrition_supplements_categories nc where n.supcatid=nc.supcatid";
+							$run_query = mysqli_query($con,$sql);
+							$count = mysqli_num_rows($run_query);
+							if($count > 0){
+									while ($row = mysqli_fetch_array($run_query)) {
+											extract($row);
+											$name=strtolower($name);
+											$category=strtolower($category);
+											$brand=strtolower($brand);
+											echo "<li class='simpleCart_shelfItem'>
+												<a class='cbp-vm-image' href='equipmentsprod.php?name=$name&brand=$brand&category=$category&cost=$cost'>
+												<div class='inner_content clearfix'>
+													<div class='product_image'>
+														<img src='images/nutrition/$category/$brand/pic1.jpg'  style='width:210px;height:250px;' class='img-responsive' alt=''/>
+														<div class='product_container'>
+														   <div class='cart-left'>
+															 <p class='title'>$name</p>
+															 <p class='title' style='font-size: small;'>$brand</p>
+
+														   </div>
+														   <div class='mount item_price price'>₹$cost</div>
+														   <div class='clearfix'></div>
+													     </div>
+													  </div>
+								                     </div>
+							                    </a>
+												<div class='cbp-vm-details'>
+													Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
+												</div>
+												<a class='button item_add cbp-vm-icon cbp-vm-add' href='#'>Add to cart</a>
+											</li>";
+
+
+									}
+							}
+
+
+						?>
+					
+					
+
+
+
+
+
+
+
+					<!--	<li><img src="images/pic11.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Syenergy 2mm</a><p>Rs 850</p></div></li>
 						<li><img src="images/pic10.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Surf Yoke</a><p>Rs 1050</p></div></li>
 						<li><img src="images/pic9.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Salty Daiz</a><p>Rs 990</p></div></li>
 						<li><img src="images/pic8.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Cheeky Zane</a><p>Rs 850</p></div></li>
 						<li><img src="images/pic7.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Synergy</a><p>Rs 870</p></div></li>
-				     </ul>
+				     -->
+					 
+					
+					</ul>
 				    <script type="text/javascript">
 					 $(window).load(function() {
 						$("#flexiselDemo3").flexisel({
@@ -479,6 +563,48 @@ $(window).load(function() {
     controlNav: "thumbnails"
   });
 });
+
+
+var items=sessionStorage["items"];
+var proddetails=0;
+var quant=0;
+function addtocart(ev,pd){
+proddetails=pd;
+	//Create a new XHR object
+quant=$("#quant").val();
+//alert(quant);
+	xhr=new XMLHttpRequest();
+
+	//Register event handler
+	xhr.onreadystatechange=showMessage;
+
+	//Open & Send
+	xhr.open("GET","addtocart.php?user="+sessionStorage["uname"]+"&proddetails="+proddetails+","+quant,true);
+	xhr.send();
+
+
+
+}
+
+				function showMessage(){
+				if(xhr.readyState==4 && xhr.status==200){
+						var previtems=sessionStorage["items"];
+						//alert(previtems);
+						var newitems;
+						if(previtems!=undefined)newitems=previtems+"&"+proddetails+","+quant;
+						else newitems=proddetails+","+quant;
+						sessionStorage.setItem("items",newitems);
+						proddetails=null;
+						quant=null;
+
+				}
+
+
+				}
+
+
+
+
 </script>
 
 </body>
