@@ -199,15 +199,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        Apparel&nbsp;
+                        <?php
+
+include 'db.php' ;
+extract($_GET) ;
+echo $category; ?>&nbsp;
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="home">&nbsp;
-                       Women / Men
+                       <?php
+
+include 'db.php' ;
+extract($_GET) ;
+echo $brand; ?>
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="women">
-                       Lorem Ipsum
+                       <?php
+
+include 'db.php' ;
+extract($_GET) ;
+echo $name; ?>
                     </li>
                 </ul>
                 <ul class="previous">
@@ -229,34 +241,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 include 'db.php' ;
 extract($_GET) ;
 $proddetails = "'".$name.",".$category.",".$brand.",".$cost."'";
-
+$f = fopen("SE_final/equipments/$category/$name/$brand/Description.txt", "r");
+$txt=fgets($f);
 
 					echo "
 					<div class='singel_right'>
 										<div class='labout span_1_of_a1'>
 										<div class='flexslider'>
 										<ul class='slides'>
-										 <li data-thumb='images/equipments/$category/$name/$brand/1.jpg'>
-											 <img src='images/equipments/$category/$name/$brand/1.jpg' />
+										 <li data-thumb='SE_final/equipments/$category/$name/$brand/images/1.jpg'>
+											 <img src='SE_final/equipments/$category/$name/$brand/images/1.jpg' />
 										 </li>
-										 <li data-thumb='images/equipments/$category/$name/$brand/2.jpg'>
-											 <img src='images/equipments/$category/$name/$brand/2.jpg' />
+										 <li data-thumb='SE_final/equipments/$category/$name/$brand/images/2.jpg'>
+											 <img src='SE_final/equipments/$category/$name/$brand/images/2.jpg' />
 										 </li>
-										 <li data-thumb='images/equipments/$category/$name/$brand/3.jpg'>
-											 <img src='images/equipments/$category/$name/$brand/3.jpg' />
+										 <li data-thumb='SE_final/equipments/$category/$name/$brand/images/3.jpg'>
+											 <img src='SE_final/equipments/$category/$name/$brand/images/3.jpg' />
 										 </li>
 
 										</ul>
 									 </div>
 									</div>
 					<div class='cont1 span_2_of_a1 simpleCart_shelfItem'>
-					<h1>Lorem Ipsum</h1>
+					<h1>$name</h1>
 
 					 <div class='price_single'>
 					 <span class='amount item_price actual'>₹$cost</span>
 					</div>
 					<h2 class='quick'>Quick Overview:</h2>
-					<p class='quick_desc'> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+					
+					<p class='quick_desc'> $txt</p>
 					 <ul class='size'>
 					 <h3>Size</h3>
 					 <li><a href='#'>25</a></li>
@@ -292,7 +306,7 @@ $proddetails = "'".$name.",".$category.",".$brand.",".$cost."'";
 					</div>";
 
 
-
+fclose($f);
 
 
 ?>
@@ -316,10 +330,25 @@ $proddetails = "'".$name.",".$category.",".$brand.",".$cost."'";
 							    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
 									<div class="facts">
 									  <ul class="tab_list">
-									  	<li><a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</a></li>
+<?php
+
+include 'db.php' ;
+extract($_GET) ;
+
+	$f = fopen("SE_final/equipments/$category/$name/$brand/Description.txt", "r");
+
+	while(!feof($f)) { 
+	    echo fgets($f) . "<br />";
+	} 
+
+	fclose($f);
+
+	?>									 
+									 <!--	<li><a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</a></li>
 									  	<li><a>augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigatione</a></li>
 									  	<li><a>claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica</a></li>
-									  	<li><a>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>
+									  	<li><a>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</a></li>  -->
+										
 									  </ul>
 							        </div>
 							     </div>
@@ -330,12 +359,69 @@ $proddetails = "'".$name.",".$category.",".$brand.",".$cost."'";
 					 </div>
 					 <h3 class="like">You Might Also Like</h3>
 				     <ul id="flexiselDemo3">
-						<li><img src="images/pic11.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Syenergy 2mm</a><p>Rs 850</p></div></li>
+					 
+					<?php
+
+
+						include "db.php";
+
+
+							$sql = "select e.eqname as name, ec.eqcategory as category, eb.eqbrandname as brand, e.eqcost as cost from equipments e, equipments_categories ec, equipments_brands eb where e.eqcatid=ec.eqcatid and e.eqbrandid=eb.eqbrandid";
+							$run_query = mysqli_query($con,$sql);
+							$count = mysqli_num_rows($run_query);
+							if($count > 0){
+									while ($row = mysqli_fetch_array($run_query)) {
+											extract($row);
+											$name=strtolower($name);
+											$category=strtolower($category);
+											$brand=strtolower($brand);
+											echo "<li class='simpleCart_shelfItem'>
+												<a class='cbp-vm-image' href='equipmentsprod.php?name=$name&brand=$brand&category=$category&cost=$cost'>
+												<div class='inner_content clearfix'>
+													<div class='product_image'>
+														<img src='SE_final/equipments/$category/$name/$brand/images/1.jpg'  style='width:210px;height:250px;' class='img-responsive' alt=''/>
+														<div class='product_container'>
+														   <div class='cart-left'>
+															 <p class='title'>$name</p>
+															 <p class='title' style='font-size: small;'>$brand</p>
+
+														   </div>
+														   <div class='mount item_price price'>₹$cost</div>
+														   <div class='clearfix'></div>
+													     </div>
+													  </div>
+								                     </div>
+							                    </a>
+												<div class='cbp-vm-details'>
+													Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
+												</div>
+												<a class='button item_add cbp-vm-icon cbp-vm-add' href='#'>Add to cart</a>
+											</li>";
+
+
+									}
+							}
+
+
+						?>
+					
+					
+
+
+
+
+
+
+
+					<!--	<li><img src="images/pic11.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Syenergy 2mm</a><p>Rs 850</p></div></li>
 						<li><img src="images/pic10.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Surf Yoke</a><p>Rs 1050</p></div></li>
 						<li><img src="images/pic9.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Salty Daiz</a><p>Rs 990</p></div></li>
 						<li><img src="images/pic8.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Cheeky Zane</a><p>Rs 850</p></div></li>
 						<li><img src="images/pic7.jpg" class="img-responsive" /><div class="grid-flex"><a href="#">Synergy</a><p>Rs 870</p></div></li>
-				     </ul>
+				     -->
+					 
+					
+					</ul>
 				    <script type="text/javascript">
 					 $(window).load(function() {
 						$("#flexiselDemo3").flexisel({

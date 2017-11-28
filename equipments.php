@@ -301,8 +301,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 						include "db.php";
-
-
+						
 							$sql = "select e.eqname as name, ec.eqcategory as category, eb.eqbrandname as brand, e.eqcost as cost from equipments e, equipments_categories ec, equipments_brands eb where e.eqcatid=ec.eqcatid and e.eqbrandid=eb.eqbrandid";
 							$run_query = mysqli_query($con,$sql);
 							$count = mysqli_num_rows($run_query);
@@ -312,11 +311,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											$name=strtolower($name);
 											$category=strtolower($category);
 											$brand=strtolower($brand);
+											$f = fopen("SE_final/equipments/$category/$name/$brand/Description.txt", "r");
+$txt=fgets($f);
 											echo "<li class='simpleCart_shelfItem'>
 												<a class='cbp-vm-image' href='equipmentsprod.php?name=$name&brand=$brand&category=$category&cost=$cost'>
 												<div class='inner_content clearfix'>
 													<div class='product_image'>
-														<img src='images/equipments/$category/$name/$brand/1.jpg'  style='width:210px;height:250px;' class='img-responsive' alt=''/>
+														<img src='SE_final/equipments/$category/$name/$brand/images/1.jpg'  style='width:210px;height:250px;' class='img-responsive' alt=''/>
 														<div class='product_container'>
 														   <div class='cart-left'>
 															 <p class='title'>$name</p>
@@ -330,11 +331,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								                     </div>
 							                    </a>
 												<div class='cbp-vm-details'>
-													Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
+													$txt
 												</div>
 												<a class='button item_add cbp-vm-icon cbp-vm-add' href='#'>Add to cart</a>
 											</li>";
-
+fclose($f);
 
 									}
 							}
