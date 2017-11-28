@@ -161,12 +161,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									include "db.php";
 
 
-										$sql = "select * from nutrition_supplements_brands";
+										$sql = "select DISTINCT supbrand from nutrition_supplements";
 										$run_query = mysqli_query($con,$sql);
 										$count = mysqli_num_rows($run_query);
 										if($count > 0){
 												while ($row = mysqli_fetch_array($run_query)) {
-														$supbrand = $row['supbrandname'];
+														$supbrand = $row['supbrand'];
 														echo "<li><a href='equipmentsbrands.php?brand=$supbrand'>$supbrand</a></li>";
 
 
@@ -295,8 +295,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						include "db.php";
 
 
-							$sql = "select n.supname as name, nc.supcategory as category, nb.supbrandname as brand, n.supcost as cost from nutrition_supplements n, nutrition_supplements_categories nc, nutrition_supplements_brands nb where n.supcatid=nc.supcatid and n.supbrand=nb.supbrandname";
+							$sql = "select n.supname as name, nc.supcategory as category, n.supbrand as brand, n.supcost as cost from nutrition_supplements n, nutrition_supplements_categories nc where n.supcatid=nc.supcatid";
 							$run_query = mysqli_query($con,$sql);
+							if(!$run_query){echo "The error is here";}
+							else{
 							$count = mysqli_num_rows($run_query);
 							if($count > 0){
 									while ($row = mysqli_fetch_array($run_query)) {
@@ -304,11 +306,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											$name=strtolower($name);
 											$category=strtolower($category);
 											$brand=strtolower($brand);
+											$f = fopen("images/nutrition/$category/$brand/des.txt", "r");
+$txt=fgets($f);
 											echo "<li class='simpleCart_shelfItem'>
-												<a class='cbp-vm-image' href='equipmentsprod.php?name=$name&brand=$brand&category=$category&cost=$cost'>
+												<a class='cbp-vm-image' href='supplementsprod.php?name=$name&brand=$brand&category=$category&cost=$cost'>
 												<div class='inner_content clearfix'>
 													<div class='product_image'>
-														<img src='images/nutrition/$category/$brand/$name/1.jpg'  style='width:210px;height:250px;' class='img-responsive' alt=''/>
+														<img src='images/nutrition/$category/$brand/pic1.jpg'  style='width:210px;height:250px;' class='img-responsive' alt=''/>
 														<div class='product_container'>
 														   <div class='cart-left'>
 															 <p class='title'>$name</p>
@@ -322,15 +326,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								                     </div>
 							                    </a>
 												<div class='cbp-vm-details'>
-													Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
+													$txt
 												</div>
 												<a class='button item_add cbp-vm-icon cbp-vm-add' href='#'>Add to cart</a>
 											</li>";
 
-
+fclose($f);
 									}
 							}
-
+							}
 
 						?>					
 						</ul>
